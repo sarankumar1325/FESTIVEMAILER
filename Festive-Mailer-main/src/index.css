@@ -1,0 +1,409 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Enhanced smooth scrolling with momentum */
+    scroll-padding-top: 2rem;
+    /* Better scroll performance on mobile */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    scroll-behavior: smooth;
+    /* Prevent scroll lag on supported browsers */
+    -webkit-overflow-scrolling: touch;
+    /* Improve scroll performance */
+    overscroll-behavior: contain;
+    /* Enable hardware acceleration for body */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+  
+  /* Performance optimizations for smooth animations */
+  * {
+    box-sizing: border-box;
+    /* Reduce repaint and reflow */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Enhanced image performance with better optimization */
+  img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    /* Remove will-change when not hovering for better performance */
+    will-change: auto;
+    /* Prevent layout shift during hover */
+    contain: layout style paint;
+    /* Optimize image loading */
+    image-rendering: -webkit-optimize-contrast;
+    /* Prevent dragging for better UX */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    /* Better transition performance */
+    transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+                filter 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+                opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  /* Hardware acceleration for better performance */
+  .hw-accelerate {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform;
+  }
+  
+  /* Optimized hover transitions with performance improvements */
+  .smooth-hover {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                filter 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: auto;
+    contain: layout style;
+  }
+  
+  .smooth-hover:hover {
+    will-change: transform;
+  }
+  
+  /* Festival card optimization with better performance */
+  .festival-card {
+    contain: layout style paint;
+    will-change: auto;
+    /* Optimize compositing */
+    isolation: isolate;
+    /* Better transition performance */
+    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+  }
+  
+  .festival-card:hover {
+    will-change: transform;
+  }
+  
+  .festival-card img {
+    transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1),
+                filter 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+    will-change: auto;
+    /* Contain repaints to the image */
+    contain: layout style paint;
+    /* Better performance on hover */
+    transform-origin: center center;
+  }
+  
+  .festival-card:hover img {
+    will-change: transform, filter;
+  }
+  
+  /* Scroll optimization classes */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  /* Performance boost for large lists and grids */
+  .grid-performance {
+    contain: layout style;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
+  }
+  
+  /* Optimize animations for better performance */
+  .animate-optimized {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    contain: layout style paint;
+  }
+  
+  /* Additional performance classes */
+  .optimize-scroll {
+    /* Optimize for smooth scrolling */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Reduce jank during scroll */
+    will-change: scroll-position;
+    /* Contain repaints */
+    contain: layout style;
+  }
+  
+  /* Reduce motion blur during fast scrolling */
+  .reduce-blur {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+  }
+  
+  /* GPU acceleration for cards */
+  .gpu-accelerate {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+    will-change: transform;
+  }
+  
+  /* Optimize hover states */
+  .hover-optimize {
+    transition: transform 0.15s cubic-bezier(0.4, 0.0, 0.2, 1);
+    will-change: auto;
+  }
+  
+  .hover-optimize:hover {
+    will-change: transform;
+  }
+  
+  /* Reduce motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-meteor-effect {
+    animation: meteor 5s linear infinite;
+  }
+  
+  .animate-comet-trail {
+    animation: cometTrail 8s linear infinite;
+  }
+  
+  .animate-shooting-star {
+    animation: shootingStar 6s linear infinite;
+  }
+  
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+  
+  .animate-border-beam {
+    animation: border-beam 2s linear infinite;
+  }
+  
+  .animate-gradient-x {
+    animation: gradient-x 15s ease infinite;
+    background-size: 400% 400%;
+  }
+  
+  .animate-gradient-y {
+    animation: gradient-y 15s ease infinite;
+    background-size: 400% 400%;
+  }
+  
+  .animate-gradient-xy {
+    animation: gradient-xy 15s ease infinite;
+    background-size: 400% 400%;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Smooth scroll utilities */
+  .scroll-momentum {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+  
+  .scroll-performance {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: scroll-position;
+  }
+}
+
+@keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+    box-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
+  }
+  70% {
+    opacity: 1;
+    box-shadow: 0 0 12px currentColor, 0 0 24px currentColor;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-500px);
+    opacity: 0;
+    box-shadow: 0 0 4px currentColor, 0 0 8px currentColor;
+  }
+}
+
+@keyframes cometTrail {
+  0% {
+    transform: rotate(225deg) translateX(0) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(225deg) translateX(-250px) scale(1);
+  }
+  100% {
+    transform: rotate(225deg) translateX(-600px) scale(0.6);
+    opacity: 0;
+  }
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: rotate(200deg) translateX(0) scale(1.2);
+    opacity: 1;
+    filter: brightness(1.5);
+  }
+  80% {
+    opacity: 1;
+    filter: brightness(1.2);
+  }
+  100% {
+    transform: rotate(200deg) translateX(-700px) scale(0.8);
+    opacity: 0;
+    filter: brightness(1);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes border-beam {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes gradient-y {
+  0%, 100% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+}
+
+@keyframes gradient-xy {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.8), 0 0 40px rgba(168, 85, 247, 0.4);
+  }
+}
